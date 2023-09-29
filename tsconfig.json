@@ -12,8 +12,9 @@
 		"module": "CommonJS",
 		"allowJs": true,
 		"paths": {
-			"Client/*": [ "./*" ]
+			"Client/*": [ "./client/*" ]
 		}
 	},
-	"include": [ "./**/*" ]
+	"include": [ "./client" ],
+	"exclude": [ "node_modules" ]
 }

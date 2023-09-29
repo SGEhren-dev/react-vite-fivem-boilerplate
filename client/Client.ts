@@ -1,5 +1,5 @@
 import { TimeUnits } from "Client/Enums";
-import { sendReactMessage } from "./Utils";
+import { sendIpcMessage } from "Client/Utils";
 
 let playerLastHealth: number;
 let playerLastArmor: number;
@@ -13,17 +13,17 @@ setInterval(() => {
 	const currentStamina = GetPlayerStamina(PlayerId());
 
 	if (currentHealth !== playerLastHealth) {
-		sendReactMessage("setHealth", (currentHealth / 200) * 100);
+		sendIpcMessage("setHealth", (currentHealth / 200) * 100);
 		playerLastHealth = currentHealth;
 	}
 
 	if (currentArmor !== playerLastArmor) {
-		sendReactMessage("setArmor", (currentArmor / 100) * 100);
+		sendIpcMessage("setArmor", (currentArmor / 100) * 100);
 		playerLastArmor = currentArmor;
 	}
 
 	if (currentStamina !== playerLastStamina) {
-		sendReactMessage("setBreath", (currentStamina / 200) * 100);
+		sendIpcMessage("setBreath", (currentStamina / 200) * 100);
 	}
 
 }, 1 * TimeUnits.SECONDS);
@@ -35,10 +35,10 @@ setInterval(() => {
 	const playerTalking = NetworkIsPlayerTalking(PlayerId());
 
 	if (playerTalking && !wasPlayerTalking) {
-		sendReactMessage("setIsTalking", true);
+		sendIpcMessage("setIsTalking", true);
 		wasPlayerTalking = playerTalking;
 	} else if (!playerTalking && wasPlayerTalking) {
-		sendReactMessage("setIsTalking", false);
+		sendIpcMessage("setIsTalking", false);
 	}
 
 }, 1 * TimeUnits.SECONDS);

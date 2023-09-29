@@ -10,3 +10,8 @@ export enum PlayerStat {
 	ARMOR = "ARMOR",
 	BREATH = "BREATH"
 }
+
+export enum TimeUnits {
+	SECONDS = 1000,
+	MINUTES = 60000
+}

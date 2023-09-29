@@ -1,3 +1,3 @@
-export const sendReactMessage = <T = unknown>(action: string, data: T) => {
+export const sendIpcMessage = <T = unknown>(action: string, data: T) => {
 	SendNUIMessage({ action, data });
 };
