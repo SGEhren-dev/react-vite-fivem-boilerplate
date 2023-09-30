@@ -12,9 +12,9 @@ games {
 
 ui_page "renderer/dist/index.html"
 
-client_script "dist/client.js"
+client_script "dist/client/client.js"
 
 files {
 	"renderer/dist/index.html",
-	"renderer/dist/**/*"
+	"renderer/dist/assets/*"
 }

@@ -2,7 +2,6 @@ import webpack from "webpack";
 import path from "path";
 import TsConfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
-const clientPath = path.resolve(__dirname, "client");
 const buildPath = path.resolve(__dirname, "dist");
 
 export default {

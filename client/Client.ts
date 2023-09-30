@@ -23,10 +23,10 @@ setInterval(() => {
 	}
 
 	if (currentStamina !== playerLastStamina) {
-		sendIpcMessage("setBreath", (currentStamina / 200) * 100);
+		sendIpcMessage("setBreath", (currentStamina / 100) * 100);
 	}
 
-}, 1 * TimeUnits.SECONDS);
+}, 0.5 * TimeUnits.SECONDS);
 
 let wasPlayerTalking: boolean;
 
@@ -41,4 +41,4 @@ setInterval(() => {
 		sendIpcMessage("setIsTalking", false);
 	}
 
-}, 1 * TimeUnits.SECONDS);
+}, 0.5 * TimeUnits.SECONDS);
